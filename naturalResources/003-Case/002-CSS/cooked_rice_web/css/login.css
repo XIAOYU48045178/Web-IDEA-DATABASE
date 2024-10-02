@@ -1,0 +1,93 @@
+body {
+    position: relative;
+}
+
+.box {
+    width: 600PX;
+    height: 300PX;
+
+    box-sizing: border-box;
+    border: 2PX solid #333;
+    border-radius: 5PX;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #fff;
+
+    opacity: 0.8;
+
+}
+
+.ul_box ul {
+    height: 50PX;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.ul_box ul li {
+    width: 298PX;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ul_box ul li.active {
+    background-color: #000;
+
+    opacity: 0.6;
+}
+
+
+.ul_box ul li.active a {
+    color: #ff0000;
+}
+
+
+
+
+.from_box {
+    width: 400PX;
+    height: 200PX;
+
+    padding: 15PX;
+    border-right: 1PX solid #000;
+}
+
+.from_box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.from_box label {
+    height: 28PX;
+    width: 380PX;
+
+    border: 2PX solid;
+    border-radius: 5PX;
+
+    margin: 10PX 0PX;
+}
+
+.from_box button {
+    width: 380PX;
+    height: 40PX;
+
+    border-radius: 5PX;
+
+    margin: 10PX 0PX;
+
+    background-color: #ff6767;
+}
+
+.from_box form label input {
+    border: none;
+    padding-left: 5PX;
+
+    font-size: 15PX;
+}

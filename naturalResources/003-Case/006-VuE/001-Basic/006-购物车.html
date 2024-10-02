@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+        li {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        li img {
+            width: 100px;
+        }
+    </style>
+    <script type="text/javascript" src=""></script>
+</head>
+
+<body>
+    <div id="box">
+        <input type="checkbox" v-model="isAll" @change="AllChecked" />全选/全不选
+        <ul>
+            <li v-for="(item,index) in datalist" :key="item.id">
+                <input type="checkbox" v-model="checkList" :value="item" @change="ItemChecked" />
+                <img :src="item.pic" />
+
+                <div>
+                    <div>{{item.name}}</div>
+                    <div style="color:red;">￥{{item.price}}</div>
+                </div>
+
+                <div>
+                    <button @click="item.number--" :disabled="item.number===1">-</button>
+                    <span>{{item.number}}</span>
+                    <button @click="item.number++" :disabled="item.number===item.limit">+</button>
+                </div>
+                <div>
+                    <button @click="DeleteClick(index,item.id)">删除</button>
+                </div>
+            </li>
+        </ul>
+
+        <div>总金额：{{ Sum }}</div>
+
+        {{checkList}}
+    </div>
+    <script type="text/javascript">
+        var obj = {
+            computed: {
+                Sum() {
+                    var total = 0
+                    this.checkList.forEach(item => {
+                        total += item.price * item.number
+                    })
+
+                    return total
+                }
+            },
+            data() {
+                return {
+                    isAll: false,
+                    checkList: [],
+                    datalist: [{
+                        name: "商品1",
+                        price: 10,
+                        number: 1,
+                        id: 1,
+                        limit: 5,
+                        pic: "https://static.maizuo.com/pc/v5/usr/movie/44dc08914d508fc47c8267c6ca73f2d8.jpg"
+                    },
+                    {
+                        name: "商品2",
+                        price: 20,
+                        number: 2,
+                        id: 2,
+                        limit: 10,
+                        pic: "https://static.maizuo.com/pc/v5/usr/movie/44dc08914d508fc47c8267c6ca73f2d8.jpg"
+                    },
+                    {
+                        name: "商品3",
+                        price: 30,
+                        number: 3,
+                        id: 3,
+                        limit: 15,
+                        pic: "https://static.maizuo.com/pc/v5/usr/movie/44dc08914d508fc47c8267c6ca73f2d8.jpg"
+                    }
+                    ]
+                }
+            },
+            methods: {
+
+                DeleteClick(index, id) {
+                    this.datalist.splice(index, 1)
+
+                    this.checkList = this.checkList.filter(item => item.id !== id)
+
+                    this.ItemChecked()
+                },
+
+                AllChecked() {
+
+                    if (this.isAll) {
+                        this.checkList = this.datalist
+                    } else {
+                        this.checkList = []
+                    }
+                },
+
+                ItemChecked() {
+                    if (this.checkList.length === this.datalist.length) {
+                        this.isAll = true
+                    } else {
+                        this.isAll = false
+                    }
+                }
+            }
+        }
+
+        var vm = Vue.createApp(obj).mount("#box")
+    </script>
+</body>
+
+</html>

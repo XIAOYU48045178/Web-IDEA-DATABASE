@@ -1,0 +1,33 @@
+```html
+<div id="box">
+    <input type="text" v-model="text"/>
+    <ul>
+        <li v-for="data in datalist" :key="data">
+            {{data}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    obj = {
+        data(){
+            return {
+                text:"",
+                datalist:["aaa","add","bbb","bbc","ccc","ddd","eee","ade"],
+                originList:["aaa","add","bbb","bbc","ccc","ddd","eee","ade"]
+            }
+        },
+        watch:{
+            text(newval){
+                console.log(newval)
+                setTimeout(()=>{
+                    this.datalist = this.originList.filter(item=> item.includes(newval) )
+
+                },1000)
+            }
+        }
+    }
+
+    Vue.createApp(obj).mount("#box")
+</script>
+

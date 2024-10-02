@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格标签</title>
+</head>
+<body>
+    <!-- <table>表格 <tr>表格行 <td>表格数据 -->
+    <!-- border="数字"表格边框线条粗细 width="数字"总宽度 height="数字"总高度 cellspacing="数字"单元格之间的距离 cellpadding="数字"边框和文本之间的距离 bgcolor=""背景颜色 bordercolor=""边框颜色-->
+    <table border="1" width="500" height="150" cellspacing="0" cellpadding="0" align="center" bgcolor="red" bordercolor="green">
+
+        <!-- <caption>表格标题 -->
+        <caption>表格标题</caption>
+
+        <!-- <tr>表格行 -->
+        <!-- <tr> height="数字" width="数字"W3C无 bgcolor=""背景颜色 -->
+        <!-- <tr> align="left(默认),center,right"水平对齐方式 左,居中,右 valign="top,middle(默认),bottom"垂直对齐方式 顶部 居中 底部 -->
+        <tr height="50" bgcolor="yellow" align="center" valign="bottom"> <!--底部居中-->
+
+            <!-- <th>标题小格(默认加粗居中) -->
+            <!-- <th> align="left(默认),center,right"水平对齐方式 左,居中,右 valign="top,middle(默认),bottom"垂直对齐方式 顶部 居中 底部 -->
+            <th width="30" height="150" bgcolor="blue" align="right" valign="top">1</th>  <!--顶部居右-->
+            <th>2</th>
+            <th>3</th>
+        </tr> 
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <!-- 单元格合并 -->
+    <!-- rowspan="数字"列合并 colspan="数字"行合并 -->
+    <table width="540" height="385" border="1" cellspacing="0" cellpadding="0" align="center">
+        <caption>课程表</caption>
+        <!-- 第一行 -->
+        <tr bgcolor="deepskyblue">
+            <th></th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>          
+        </tr>
+        <!-- 第二行 -->
+        <tr bgcolor="skyblue">
+            <td bgcolor="skyblue">早自习</td>
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>            
+        </tr>
+        <!-- 第三行 -->
+        <tr>           
+            <td rowspan="4" bgcolor="skyblue">上午</td>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第四行 -->
+        <tr bgcolor="skyblue">
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第五行 -->
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第六行 -->
+        <tr bgcolor="skyblue">
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第七行 -->
+        <tr >
+            <td rowspan="4" bgcolor="skyblue">下午</td>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第八行 -->
+        <tr bgcolor="skyblue">
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第九行 -->
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第十行 -->
+        <tr bgcolor="skyblue">
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- 第十一行 -->
+        <tr>
+            <td bgcolor="skyblue">晚自习</td>
+            <td colspan="5"></td>
+        </tr>
+    </table>
+
+    <table height="300" width="600" border="1" align="center" bgcolor="CDE7ED" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+        <caption>表格标题</caption>
+
+        <!-- 列分组 -->
+        <!-- <colgroup> span"数字"多少列一组> -->
+        <colgroup span="1" bgcolor="#91C5D4"></colgroup>
+        
+        <!-- 行分组 -->
+        <!-- thead tbody tfoot 头 主体 脚 -->
+        <thead>  <!--表头-->
+            <tr align="center" bgcolor="#66A9BD">
+                <th rowspan="2">序号</th>
+                <th colspan="6">小标题</th>
+            </tr>
+            <tr bgcolor="#91C5D4">
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+            </tr>
+        </thead>
+        <tbody>  <!--表主体-->
+            <tr align="center">
+                <td>1</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+            <tr align="center">
+                <td>2</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+            <tr align="center">
+                <td>3</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+            <tr align="center">
+                <td>4</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+            <tr align="center">
+                <td>5</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+                <td>内容</td>
+            </tr>
+        </tbody>
+        <tfoot>  <!--表脚-->
+            <tr align="center" bgcolor="#D7E1C5">
+                <td bgcolor="#B0CC7F">说明</td>
+                <td colspan="7">说明内容</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

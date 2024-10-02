@@ -1,0 +1,39 @@
+header {
+    height: 50PX;
+
+    background-color: #333;
+
+    color: #999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Times New Roman ", "KaiTi";
+    font-size: 20PX;
+    font-weight: 700;
+
+    padding-left: 150PX;
+}
+
+
+
+header nav ul {
+    display: flex;
+
+    font-size: 15PX;
+}
+
+header nav ul li {
+    margin-left: 25PX; 
+
+    display: none;
+}
+
+header nav ul li.active {
+    display: block;
+}
+
+header nav ul li a:first-of-type {
+    color: #999;
+}

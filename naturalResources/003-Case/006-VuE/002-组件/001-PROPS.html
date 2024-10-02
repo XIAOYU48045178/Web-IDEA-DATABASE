@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <div style="background:yellow;">根组件标题</div>
+
+        <navbar name="电影" :right="false" :parent="parent"></navbar>
+        <navbar name="影院" :parent="parent"></navbar>
+        <navbar name="登录" :parent="parent"></navbar>
+    </div>
+
+    <script>
+        Vue.component("navbar", {
+            props: {
+                name: {
+                    type: String,
+                    default: ""
+                },
+                right: {
+                    type: Boolean,
+                    default: true
+                },
+                parent: {
+                    type: String,
+                    default: ""
+                }
+            },
+
+            template: `
+            <div>
+                <button>left</button>
+                <span>{{name}}--{{parent}}</span>  
+                <button v-show="right">right</button>  
+            </div>
+            `
+        })
+        new Vue({
+            el: "#box",
+            data: {
+                parent: "20020424"
+            }
+        })
+
+    </script>
+</body>
+
+</html>

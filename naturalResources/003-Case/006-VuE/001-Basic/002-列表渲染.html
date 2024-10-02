@@ -1,0 +1,32 @@
+<div id="box">
+    <input type="text" v-model="mytext" />
+    <button @click="Add">Add</button>
+
+    <div v-show="!datalist.length">空空如也</div>
+    <ul v-show="datalist.length">
+        <li v-for="(item,index) in datalist">
+            {{item}}--{{index}}
+            <button @click="Del(index)">del</button>
+        </li>
+    </ul>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#box",
+        data: {
+            mytext: "",
+            datalist: ["111", "222", "333"]
+        },
+        methods: {
+            Add() {
+                console.log("add", this.mytext)
+                this.datalist.push(this.mytext)
+                this.mytext = ""
+            },
+            Del(index) {
+                console.log("del", index)
+                this.datalist.splice(index, 1)
+            }
+        }
+    })
+</script>

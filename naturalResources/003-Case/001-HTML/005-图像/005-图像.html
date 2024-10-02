@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 网页支持图片格式 -->
+    <!-- bmp windows画图软件默认保存的格式，位图 -->
+    <!-- gif 支持动画 比如表情包 -->
+    <!-- jpeg(.jpg) 有损压缩图片，用于照片便携式网络图像，用于1ogo、背景图形等，支持 -->
+    <!-- png 透明和半透明 -->
+    <!-- svg 矢量图片 -->
+    <!-- webp 压缩算法非常优秀的图片格式 -->
+    <img src="file:/E:/Web/HTML"> <!-- 绝对路径本地 -->
+    <br>
+    <img src="./img" height="500" width="500"> <!-- 相对路径 -->
+    <br>
+    <img src="./img" alt="XIAOYU.png" width="300"> <!-- 如果只设置一个像素则按比例缩放-->
+    <br>
+    <img src="./img" alt="XIAOYU.png" width="300"> <!-- 如果只设置一个像素则按比例缩放-->
+    <br>
+
+    <img src="" width="1024" height="576" alt="" usemap="#map">
+    <map name="map">
+        <area shape="rect" coords="0,0,114,576" href="" alt=""/>
+        <area shape="circle" coords="190,230,5" href="" alt=""/>
+    </map>
+
+    <!-- <figure> 元素代表一段独立的内容-->
+    <!-- <figcaption>-->
+    <figure>
+        <img src="" alt="XiaoYu">
+        <figcaption>XiaoYu</figcaption>
+    </figure>
+
+    <picture>
+        <source media="(min-width:650px)" srcset="./img">
+        <source media="(min-width:200px)" srcset="./img">
+        <img src="" alt="XiaoYu">
+    </picture>
+    <br>
+
+    <svg width="300" height="200">
+        <polygon    
+            points="100,10 40,198 190,78 10,78 160,198"
+            style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"
+        />
+    </svg>
+
+</body>
+
+</html>

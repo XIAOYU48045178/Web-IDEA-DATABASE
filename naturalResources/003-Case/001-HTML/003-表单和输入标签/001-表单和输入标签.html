@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单标签</title>
+</head>
+<body>
+    <!-- 输入框 密码框 -->
+    <form action="" method="">
+        用户名：<input type="text" value="123" disabled>
+        </br>
+        密码：<input type="password" placeholder="提示文本">
+        </br>
+    </form>
+
+    <!-- 多行文本 -->
+    <form action="">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        </br>
+    </form>    
+
+    <!-- 单选 多选 -->
+    <!-- 注意: 单选 name 相同 -->
+    <form action="">
+        性别：
+        <input type="radio" name="性别" value="男">男
+        <input type="radio" name="性别" checked value="女">女
+        </br>
+
+        前端基础：<input type="checkbox">HTML<input type="checkbox">CSS<input type="checkbox">JavaScript
+        </br>
+    </form>
+
+    <!-- Html5单选绑定 -->
+    <form action="">
+        性别：
+        <label> <!--HTML5-->
+            <input type="radio" name="性别" value="男">男
+        </label>
+        <label>
+            <input type="radio" name="性别" checked value="女">女
+        </label>
+        </br>
+    </form>    
+
+    <!-- Html4单选绑定 -->
+    <form action="">
+        性别：
+        <input type="radio" name="性别" value="男" id="nan"> <label for="nan">男</label> <!--HTML4-->
+        <input type="radio" name="性别" checked value="女" id="nv"> <label for="nv">女</label>
+        </br>
+    </form>
+
+    <!-- 下拉单选选项 -->
+    <form action="">
+        出生日期：
+        <select name="" id="">
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002" selected>2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>     
+        </select>
+        </br>
+    </form>
+
+    <!-- 下拉多选选项 multiple -->
+    <form action="">
+        RGB颜色:
+        <select name="" id="" multiple size="1">
+            <option value="">红色</option>
+            <option value="">绿色</option>
+            <option value="">蓝色</option>
+        </select>
+    </form>  
+
+    <!-- input -->
+    <form action="">
+        <input type="button" value="普通按钮">
+        <br>
+        <button>普通按钮</button>
+        <br>        
+        <input type="submit" name="" id="" value="提交表单"> <!--提交到后台程序的网址form action-->
+        <br>
+        <input type="reset" name="" id="" value="重置表单">
+        <br>
+        颜色选择控件： <input type="color" name="" id="">
+        <br>
+        日期选择控件：<input type="date" name="" id="">
+        <br>
+        时间选择控件：<input type="time" name="" id="">
+        <br>
+        电子邮件控件：<input type="email" name="" id="" required>
+        <br>
+        数字控件：<input type="number" min="0" max="100">
+        <br>
+        拖拽条控件：<input type="range" min="0" max="100">
+        <br>
+        搜索框控件：<input type="search" name="" id="">
+        <br>
+        网址输入控件：<input type="url" name="" id="">
+        <br>
+        文件选择控件：<input type="file" name="" id="">
+        <br>
+    </form>
+
+    <!-- 可能选项列表 -->
+    <form action="">
+        <input type="text" name="" id="" list="01">
+        <datalist id="01">
+            <option value="0000">
+            <option value="1111">1111</option>
+        </datalist>
+    </form>
+</body>
+</html>

@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 955px;
+    height: 1420px;
+    margin: 0 auto;
+    background: yellow;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 124px;
+    background: #232939;
+    display: flex;
+    color: white;
+}
+
+header i {
+    width: 118px;
+    height: 124px;
+    line-height: 124px;
+    text-align: center;
+    font-size: 48px;
+}
+
+header span {
+    font-size: 40px;
+    flex: 1;
+    height: 124px;
+    line-height: 124px;
+}
+
+footer {
+    height: 128px;
+    background: gray;
+    display: flex;
+}
+
+footer div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #acadaf;
+    background: white;
+}
+
+footer div:hover {
+    color: #06a9ee;
+}
+
+footer div i {
+    height: 66px;
+    line-height: 66px;
+    text-align: center;
+    font-size: 58px;
+}
+
+footer div span {
+    font-size: 28px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+
+section {
+    flex: 1;
+    background: #f4f5f9;
+}
+
+.main {
+    display: flex;
+    height: 278px;
+    background: #242a3a;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main div {
+    width: 120px;
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.main div i {
+    font-size: 110px;
+    text-align: center;
+}
+
+.main div span {
+    font-size: 32px;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+}
+
+.list div {
+    width: 25%;
+    height: 208px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list div i {
+    height: 77px;
+    line-height: 77px;
+    text-align: center;
+    font-size: 55px;
+    color: #fbb458;
+}
+
+.list div span {
+    font-size: 30px;
+    height: 61px;
+    text-align: center;
+    line-height: 61px;
+}
+
+.pic {
+    margin-top: 25px;
+}

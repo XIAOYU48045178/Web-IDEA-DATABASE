@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 平年闰年 -->
+    <script>
+        var Year = 2002
+        if (Year % 4 === 0 && Year % 100 !== 0 || Year % 400 === 0) {
+            console.log(Year + ' Yes')
+        } else {
+            console.log(Year + ' No')
+        }
+    </script>
+
+    <!-- 最大公约数 -->
+    <script>
+        var max = 24
+        var min = 12
+        for (var i = min; i >= 1; i--) {
+            if (max % i === 0 && min % i === 0) {
+                console.log(i)
+                break
+            }
+        }
+    </script>
+
+    <!-- 最小公倍数 -->
+    <script>
+        var max = 15
+        var min = 10
+        for (var i = max; i <= min * max; i += max) {
+            if (i % min === 0) {
+                console.log(i)
+                break
+            }
+        }
+    </script>
+
+    <!-- fibonacci -->
+    <script>
+        function fibonacci(n) {
+            if (n <= 1) { return 1 };
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        console.log(fibonacci(10))
+    </script>
+
+    <!-- 正方形 -->
+    <script>
+        for (var j = 1; j <= 9; j++) {
+
+            for (var i = 1; i <= 9; i++) {
+                document.write('* ')
+            }
+            document.write('</br>')
+        }
+    </script>
+
+    <!-- 三角形 -->
+    <script>
+        for (var j = 1; j <= 9; j++) {
+
+            for (var i = 1; i <= j; i++) {
+                document.write('* ')
+            }
+            document.write('</br>')
+
+        }
+    </script>
+
+    <!-- NineNine -->
+    <script>
+        for (var j = 1; j <= 9; j++) {
+
+            for (var i = 1; i <= j; i++) {
+                document.write(i + '*' + j + '=' + i * j + ' ')
+            }
+            document.write('</br>')
+
+        }
+    </script>
+
+    <!-- 冒泡排序 -->
+    <script>
+        var arr = [9, 3, 6, 2, 4, 1, 8, 5, 7]
+        console.log(arr)
+        for (var j = 0; j < arr.length - 1; j++) {
+            for (var i = 0; i < arr.length - 1 - j; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    var temp = arr[i]
+                    arr[i] = arr[i + 1]
+                    arr[i + 1] = temp
+                }
+            }
+
+        }
+        console.log(arr)
+    </script>
+
+    <!-- 选择排序 -->
+    <script>
+        var arr = [9, 3, 6, 2, 4, 1, 8, 5, 7]
+        console.log(arr)
+        for (var j = 0; j < arr.length - 1; j++) {
+            var minIndex = j
+            for (var i = j + 1; i < arr.length; i++) {
+                if (arr[i] < arr[minIndex]) {
+                    minIndex = i
+                }
+            }
+            var temp = arr[j]
+            arr[j] = arr[minIndex]
+            arr[minIndex] = temp
+        }
+        console.log(arr)
+    </script>
+
+    <!-- 范围内随机数 -->
+    <script>
+        function random(min, max) {
+            var res1 = Math.floor(Math.random() * (max - min + 1))
+            var res2 = res1 + min
+            return res2
+
+        }
+        var res = random(10, 20)
+        console.log(res)
+    </script>
+
+    <!-- 时间差 -->
+    <script>
+        var time1 = new Date(2021, 1, 23, 11, 22, 18)
+        var time2 = new Date(2021, 1, 25, 3, 45, 36)
+        function getDiff(time1, time2) {
+            var ms1 = time1.getTime()
+            var ms2 = time2.getTime()
+            var sub = Math.ceil((ms2 - ms1) / 1000)
+            var day = Math.floor(sub / (60 * 60 * 24))
+            var hours = Math.floor(sub % (60 * 60 * 24) / (60 * 60))
+            var minutes = Math.floor(sub % (60 * 60) / 60)
+            var seconds = sub % 60
+            return { day: day, hours: hours, minutes: minutes, seconds: seconds }
+        }
+        var res = getDiff(time1, time2)
+        console.log(res)
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["dateFormat","escape"],
+  "author": "",
+  "license": "ISC",
+  "description": "格式化时间、Html Escape"
+}

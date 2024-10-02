@@ -1,0 +1,73 @@
+<div id="box">
+<input type="checkbox" v-model="isAll" @change="allChecked"/>全选/全不选
+<ul>
+    <li v-for="(item,index) in datalist" :key="item.id">
+    <input type="checkbox" v-model="checkList" :value="item" @change="itemChecked"/>
+    <img :src="item.pic"/>
+
+    <div>
+        <div>{{item.name}}</div>
+        <div>￥{{item.price}}</div>
+    </div>
+
+    <div>
+        <button @click="item.number--" :disabled="item.number===1">-</button>
+        <span>{{item.number}}</span>
+        <button @click="item.number++" :disabled="item.number===item.limit">+</button>
+    </div>
+    <div>
+        <button @click="deleteClick(index,item.id)">删除</button>
+    </div>
+    </li>
+</ul>
+
+<div>总金额：{{ computedSum }}</div>
+    {{checkList}}
+</div>
+<script type="text/javascript">
+    var obj = {
+        computed:{
+            computedSum(){
+                var total = 0
+                this.checkList.forEach(item=>{
+                    total += item.price*item.number
+                })
+                return total 
+            }
+        },
+        data() {
+            return {
+                isAll:false,
+                checkList:[],
+                datalist: [ {name: "商品1",price: 10,number: 1,id: 1,limit: 5,pic: ""},
+                            {name: "商品2",price: 20,number: 2,id: 2,limit: 10,pic: ""},
+                            {name: "商品3", price: 30,number: 3,id: 3,limit: 15,pic: ""}
+                ]   
+            }
+        },
+        methods:{
+            deleteClick(index,id){
+                this.datalist.splice(index,1)
+                this.checkList = this.checkList.filter(item=>item.id!==id)
+                this.itemChecked()
+            },
+            allChecked(){
+                if(this.isAll){
+                    this.checkList = this.datalist
+                }else{
+                    this.checkList = []
+                }
+            },
+
+            itemChecked(){
+                if(this.checkList.length===this.datalist.length){
+                    this.isAll = true
+                }else{
+                    this.isAll = false
+                }
+            }
+        }
+    }
+
+    Vue.createApp(obj).mount("#box")
+</script>

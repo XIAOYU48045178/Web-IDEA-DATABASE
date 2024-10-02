@@ -1,0 +1,38 @@
+```html
+<div id="box">
+    <input type="text" v-model="text"/>
+    <ul>
+        <li v-for="data in List" :key="data">
+            {{data}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    obj = {
+        data(){
+            return {
+                text:"",
+                datalist:["aaa","add","bbb","bbc","ccc","ddd","eee","ade"],
+            }
+        },
+        computed:{
+            List(){
+                return this.datalist.filter(item=> item.includes(this.text) )
+            }
+        }
+    }
+
+    Vue.createApp(obj).mount("#box")
+</script>
+```
+
+模糊查询四种方式
+
+1、函数表达式 缺点 旧的数组覆盖新数组开销大
+
+2、函数
+
+3、计算属性
+
+4、Watch

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <navbar @event="handleEvent"></navbar>
+        <sidebar v-show="isShow"></sidebar>
+    </div>
+
+    <script>
+        Vue.component("navbar", {
+            template: `
+            <div style="background-color: red;">
+                <button @click="handleClick()">点击</button>-导航栏
+            </div>
+            `,
+            methods: {
+                handleClick() {
+                    this.$emit("event", 1000000000)
+                }
+            }
+        })
+
+        Vue.component("sidebar", {
+            template: `
+            <div style="background-color: yellow;" >
+                <ul>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                <li>11111</li>
+                </ul>
+            </div>
+            `
+        })
+
+        new Vue({
+            el: "#box",
+            data: {
+                isShow: true
+            },
+            methods: {
+                handleEvent(data) {
+                    console.log("父组件的定义的事件", data)
+                    this.isShow = !this.isShow
+                }
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

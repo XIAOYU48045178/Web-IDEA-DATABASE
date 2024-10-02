@@ -1,0 +1,28 @@
+<style>
+    .active {
+        background-color: red;
+    }
+</style>
+
+<div id="box">
+    <ul>
+        <li v-for="(item,index) in datalist" :class=" current===index?'active':'' " @click="Click(index)">
+            {{item}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: "#box",
+        data: {
+            current: 0,
+            datalist: ["111", "222", "333"]
+        },
+        methods: {
+            Click(index) {
+                this.current = index
+            }
+        }
+    })
+</script>
