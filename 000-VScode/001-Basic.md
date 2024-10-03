@@ -41,7 +41,7 @@
 
 `> VSCode ` `{} * > + () . #`
 
-`插件`
+`Web 插件`
 --
 
-`Auto Rename Tag` `Live Server` `htmltagwrap` `Live Server` `ESlint` `Vetur` `px to rem & rpx (cssrem)`
+`Auto Rename Tag` `Live Server` `htmltagwrap` `Live Server` `ESlint` `Vetur` `px to rem & rpx (cssrem)` `Vue - Official`

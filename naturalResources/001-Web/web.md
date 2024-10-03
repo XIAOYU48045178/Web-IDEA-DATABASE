@@ -12,3 +12,4 @@
 |`Vue`|<https://cn.vuejs.org/>|
 |`Vue-Official`|https://marketplace.visualstudio.com/items?itemName=Vue.volar|
 |`fetch-ie8`|<https://github.com/camsong/fetch-ie8>|
+|`Vue - Official`|<https://marketplace.visualstudio.com/items?itemName=Vue.volar>|
